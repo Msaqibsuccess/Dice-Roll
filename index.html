@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            min-height: 100vh;
+            color: white;
+            background-color: black;
+        }
+
+        h1 {
+            font-size: 60px;
+            font-family: sans-serif;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        img {
+            width: 180px;
+            margin-top: 20px;
+        }
+
+        #btn {
+            margin-top: 30px;
+            padding: 10px 25px;
+            font-size: 20px;
+            font-family: sans-serif;
+            color: black;
+            background-color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #btn:active {
+            color: white;
+            background-color: #b11c1e;
+
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Dice Roll</h1>
+    <img src="assets/1.png" alt="" id="img">
+    <div id="btn" onclick="anim();">Shuffle</div>
+    <script>
+
+        function shuffle() {
+            const img = document.getElementById("img");
+            var random = Math.floor(Math.random() * 6) + 1;
+            img.setAttribute("src", `assets/${random}.png`);
+        }
+
+        function anim() {
+            setTimeout(shuffle, 500);
+            const img = document.getElementById("img");
+            img.setAttribute("src", `assets/dice-rol.gif`);
+
+        }
+    </script>
+</body>
+
+</html>
